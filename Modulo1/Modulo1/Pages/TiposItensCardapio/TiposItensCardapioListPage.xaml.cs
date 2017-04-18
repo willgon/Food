@@ -29,5 +29,12 @@ namespace Modulo1.Pages.TiposItensCardapio
                 dalTipoItemCardapio.Remove(item);
             }
         }
+
+        public async void OnAlterarClick(Object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            var item = mi.CommandParameter as TipoItemCardapio;
+            await Navigation.PushModalAsync(new TiposItensCardapioEditPage(item));
+        }
     }
 }

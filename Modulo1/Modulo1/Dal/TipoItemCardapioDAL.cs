@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Modulo1.Modelo;
 using System.Collections.ObjectModel;
+using Xamarin.Forms;
 
 namespace Modulo1.Dal
 {
@@ -73,8 +74,11 @@ namespace Modulo1.Dal
         }
         public void Remove(TipoItemCardapio tipoItemCardapio)
         {
-            this.TiposItensCardapio.Remove(tipoItemCardapio);
+           this.TiposItensCardapio.Remove(tipoItemCardapio);
         }
-
+        public void Update(TipoItemCardapio tipoItemCardapio)
+        {
+            this.TiposItensCardapio[this.TiposItensCardapio.IndexOf(tipoItemCardapio)] = tipoItemCardapio;
+        }
     }
 }
