@@ -11,6 +11,10 @@
         <ListView.ItemTemplate>
           <DataTemplate>
             <ViewCell>
+              <ViewCell.ContentActions>
+                <MenuItem Clicked="OnAlterarClick" CommandParameter="{Binding.}" Text="Alterar"/>
+                <MenuItem Clicked="OnRemoverClick" CommandParameter="{Binding.}" Text="Remover" IsDestructive="True" />
+              </ViewCell.ContentActions>
               <StackLayout Padding="5,0,5,0" Orientation="Horizontal">
                 <Image Source="{Binding CaminhoArquivoFoto}"/>
                 <Label Text="{Binding Nome}" TextColor="Blue" FontSize="Large" VerticalOptions="Center"/>

@@ -71,6 +71,10 @@ namespace Modulo1.Dal
         {
             return TiposItensCardapio;
         }
-        
+        public void Remove(TipoItemCardapio tipoItemCardapio)
+        {
+            this.TiposItensCardapio.Remove(tipoItemCardapio);
+        }
+
     }
 }
