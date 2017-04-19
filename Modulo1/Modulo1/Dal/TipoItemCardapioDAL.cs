@@ -74,7 +74,7 @@ namespace Modulo1.Dal
         }
         public void Remove(TipoItemCardapio tipoItemCardapio)
         {
-           this.TiposItensCardapio.Remove(tipoItemCardapio);
+            this.TiposItensCardapio.Remove(tipoItemCardapio);
         }
         public void Update(TipoItemCardapio tipoItemCardapio)
         {

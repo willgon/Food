@@ -106,13 +106,13 @@ namespace Modulo1.Pages.TiposItensCardapio
                 var folderFoto = await rootFolder.CreateFolderAsync("Fotos", CreationCollisionOption.OpenIfExists);
 
                 //Cria o arquivo referente à foto selecionada
-                var setArquivoPCL = folderFoto.CreateFileAsync(getArquivoPCL.Result.Name, CreationCollisionOption.ReplaceExisting);
-
+                var setArquivoPCL =  folderFoto.CreateFileAsync(getArquivoPCL.Result.Name, CreationCollisionOption.ReplaceExisting);
+                
                 //Guarda o caminho do arquivo para ser utilizado na gravação do item criado
                 caminhoArquivo = setArquivoPCL.Result.Path;
 
                 //Recupera o arquivo selecionado e o atribui ao controle no formulário
-                fototipoitemcardapio.Source = ImageSource.FromStream(() =>
+                 fototipoitemcardapio.Source = ImageSource.FromStream(() =>
                 {
                     var stream = file.GetStream();
                     file.Dispose();
@@ -129,7 +129,7 @@ namespace Modulo1.Pages.TiposItensCardapio
             }
             else
             {
-                dalTiposItensCardapio.Add(new Modelo.TipoItemCardapio()
+                dalTiposItensCardapio.Add(new TipoItemCardapio()
                 {
                     Id = Convert.ToUInt32(idtipoitemcardapio.Text),
                     Nome = nome.Text,
