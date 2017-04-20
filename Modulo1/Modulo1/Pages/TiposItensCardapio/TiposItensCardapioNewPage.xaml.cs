@@ -89,35 +89,39 @@ namespace Modulo1.Pages.TiposItensCardapio
 
                 // Método que habilita o álbum e permite a seleção de uma foto
                 var file = await CrossMedia.Current.PickPhotoAsync();
-
+                            
                 //Caso o usuário não tenha selecionado uma foto, clicando no botão cancelar
                 if (file == null)
                     return;
 
                 /* Nas instruções abaixo é feito uso dos componentes PCLStorage e PCLSpecial */
                 //Recupera o arquivo com base no caminho da foto selecionada
-
+                   
                 var getArquivoPCL = FileSystem.Current.GetFileFromPathAsync(file.Path);
 
                 // Recupera o caminho raiz da aplicação no dispositivo
                 var rootFolder = FileSystem.Current.LocalStorage;
-
+                
+                /*daqui*/
                 /* Caso a pasta Fotos não exita, ela é criada para armazenamento da foto selecionada */
                 var folderFoto = await rootFolder.CreateFolderAsync("Fotos", CreationCollisionOption.OpenIfExists);
-
+                
                 //Cria o arquivo referente à foto selecionada
                 var setArquivoPCL =  folderFoto.CreateFileAsync(getArquivoPCL.Result.Name, CreationCollisionOption.ReplaceExisting);
-                
-                //Guarda o caminho do arquivo para ser utilizado na gravação do item criado
-                caminhoArquivo = setArquivoPCL.Result.Path;
 
+
+                //Guarda o caminho do arquivo para ser utilizado na gravação do item criado
+                /* ate aqui*/
+                caminhoArquivo = setArquivoPCL.Result.Path;
+               
                 //Recupera o arquivo selecionado e o atribui ao controle no formulário
-                 fototipoitemcardapio.Source = ImageSource.FromStream(() =>
+                fototipoitemcardapio.Source = ImageSource.FromStream(() =>
                 {
                     var stream = file.GetStream();
                     file.Dispose();
                     return stream;
                 });
+
             };
         }
 

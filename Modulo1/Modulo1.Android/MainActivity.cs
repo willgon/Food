@@ -7,10 +7,16 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Plugin.Permissions;
+using System.Collections.Generic;
+using System.Linq;
+using System.IO;
+using Android;
+//[assembly: UsesPermission(Manifest.Permission.WriteExternalStorage)]
+//[assembly: UsesPermission(Manifest.Permission.ReadExternalStorage)]
 
 namespace Modulo1.Droid
 {
-    [Activity(Label = "Modulo1", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "KaikerFood", Icon = "@drawable/icone", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -26,7 +32,10 @@ namespace Modulo1.Droid
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
         {
+
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+
         }
 
     }
