@@ -100,5 +100,13 @@ namespace Modulo1.Dal
         {
             this.Entregadores.Add(entregador);
         }
+        public void Remove(Entregador entregador)
+        {
+            this.Entregadores.Remove(entregador);
+        }
+        public void Update(Entregador entregador)
+        {
+            this.Entregadores[this.Entregadores.IndexOf(entregador)] = entregador;
+        }
     }
 }

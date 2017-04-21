@@ -101,6 +101,14 @@ namespace Modulo1.Dal
         {
             this.Garcons.Add(garcom);
         }
+        public void Remove(Garcom garcom)
+        {
+            this.Garcons.Remove(garcom);
+        }
+        public void Update(Garcom garcom)
+        {
+            this.Garcons[this.Garcons.IndexOf(garcom)] = garcom;
+        }
     }
 }
 

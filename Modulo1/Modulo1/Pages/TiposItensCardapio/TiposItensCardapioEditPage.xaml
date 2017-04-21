@@ -29,7 +29,6 @@
               <Image Source="icone_tipoitemcardapio.png" Grid.Row="0" Grid.Column="0"/>
               <Label Grid.Row="0" Grid.Column="1" Text="Alterando o Tipo de Item do Cardápio" Font="24" TextColor="Blue" HorizontalOptions="Start" VerticalOptions="Center"/>
               <Label Text="{Binding Id}" Grid.Row="0" Grid.Column="2" HorizontalOptions="End" Font="Bold, 24" TextColor="Blue" x:Name="idtipoitemcardapio" VerticalOptions="Center"/>
-            
             </Grid>
           </StackLayout>
         </Frame>
